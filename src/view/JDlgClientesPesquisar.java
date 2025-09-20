@@ -10,13 +10,17 @@ package view;
  * @author Moonie
  */
 public class JDlgClientesPesquisar extends javax.swing.JDialog {
-
+    JDlgClientes jDlgClientes;
     /**
      * Creates new form JDlgClientesPesquisar
      */
     public JDlgClientesPesquisar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        setLocationRelativeTo(null);
         initComponents();
+    }
+    public void setTelaPai(JDlgClientes jDlgClientes) {
+        this.jDlgClientes = jDlgClientes;
     }
 
     /**

@@ -262,6 +262,9 @@
             <Property name="text" type="java.lang.String" value="Alterar"/>
             <Property name="iconTextGap" type="int" value="16"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mb_jBtnAlterarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="mb_jBtnPesquisar">
           <Properties>
@@ -273,6 +276,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pesquisar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mb_jBtnPesquisarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="mb_jBtnConfirmar">
           <Properties>

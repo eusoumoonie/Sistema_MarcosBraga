@@ -5,6 +5,8 @@
  */
 package view;
 
+import util.Util;
+
 /**
  *
  * @author Moonie
@@ -17,6 +19,11 @@ public class JDlgContasJogos extends javax.swing.JDialog {
     public JDlgContasJogos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Cadastro de Usuários");
+        setLocationRelativeTo(null);
+        Util.habilitar(false, mb_jTxtNickName, mb_jTxtCodigo, mb_jTxtLevel,mb_jFmtEmailVinc,
+                        mb_jTxtNickName, mb_jPsdSenha, mb_jTxtItens,mb_jTxtRegiao,  
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
     }
 
     /**
@@ -31,7 +38,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         mb_jTxtCodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        mb_jTxtCodigo1 = new javax.swing.JTextField();
+        mb_jTxtItens = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         mb_jTxtNickName = new javax.swing.JTextField();
         mb_jTxtLevel = new javax.swing.JTextField();
@@ -41,7 +48,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         mb_jFmtEmailVinc = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        mb_jTxtCodigo2 = new javax.swing.JTextField();
+        mb_jTxtRegiao = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         mb_jBtnIncluir = new javax.swing.JButton();
         mb_jBtnExcluir = new javax.swing.JButton();
@@ -69,7 +76,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
             }
         });
 
-        jLabel5.setText("Cpf");
+        jLabel5.setText("Email Vinculado");
 
         mb_jFmtEmailVinc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,10 +112,20 @@ public class JDlgContasJogos extends javax.swing.JDialog {
         mb_jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png"))); // NOI18N
         mb_jBtnAlterar.setText("Alterar");
         mb_jBtnAlterar.setIconTextGap(16);
+        mb_jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mb_jBtnAlterarActionPerformed(evt);
+            }
+        });
 
         mb_jBtnPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         mb_jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisar-alt.png"))); // NOI18N
         mb_jBtnPesquisar.setText("Pesquisar");
+        mb_jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mb_jBtnPesquisarActionPerformed(evt);
+            }
+        });
 
         mb_jBtnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         mb_jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/afirmativo.png"))); // NOI18N
@@ -178,7 +195,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(mb_jTxtCodigo1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(mb_jTxtItens, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                             .addComponent(mb_jTxtCodigo))
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +219,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(mb_jTxtCodigo2))
+                    .addComponent(mb_jTxtRegiao))
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -224,7 +241,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mb_jTxtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(mb_jTxtItens, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,7 +259,7 @@ public class JDlgContasJogos extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mb_jTxtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mb_jTxtRegiao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -260,15 +277,42 @@ public class JDlgContasJogos extends javax.swing.JDialog {
 
     private void mb_jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(true, mb_jTxtNickName, mb_jTxtCodigo, mb_jTxtLevel,mb_jFmtEmailVinc,
+                        mb_jTxtNickName, mb_jPsdSenha, mb_jTxtItens,mb_jTxtRegiao,  
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnIncluirActionPerformed
 
     private void mb_jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnExcluirActionPerformed
         // TODO add your handling code here:
+        Util.limpar( mb_jTxtNickName, mb_jTxtCodigo, mb_jTxtLevel,mb_jFmtEmailVinc,
+                        mb_jTxtNickName, mb_jPsdSenha, mb_jTxtItens,mb_jTxtRegiao,  
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnExcluirActionPerformed
 
     private void mb_jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnCancelarActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(false, mb_jTxtNickName, mb_jTxtCodigo, mb_jTxtLevel,mb_jFmtEmailVinc,
+                        mb_jTxtNickName, mb_jPsdSenha, mb_jTxtItens,mb_jTxtRegiao,  
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(true, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnCancelarActionPerformed
+
+    private void mb_jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+        Util.habilitar(true, mb_jTxtNickName, mb_jTxtCodigo, mb_jTxtLevel,mb_jFmtEmailVinc,
+                        mb_jTxtNickName, mb_jPsdSenha, mb_jTxtItens,mb_jTxtRegiao,  
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
+    }//GEN-LAST:event_mb_jBtnAlterarActionPerformed
+
+    private void mb_jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnPesquisarActionPerformed
+        // TODO add your handling code here:
+        JDlgContasJogosPesquisar jDlgContasJogosPesquisar = new JDlgContasJogosPesquisar(null, true);
+        jDlgContasJogosPesquisar.setTelaPai(this);
+        jDlgContasJogosPesquisar.setVisible(true);
+    }//GEN-LAST:event_mb_jBtnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,9 +374,9 @@ public class JDlgContasJogos extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField mb_jFmtEmailVinc;
     private javax.swing.JPasswordField mb_jPsdSenha;
     private javax.swing.JTextField mb_jTxtCodigo;
-    private javax.swing.JTextField mb_jTxtCodigo1;
-    private javax.swing.JTextField mb_jTxtCodigo2;
+    private javax.swing.JTextField mb_jTxtItens;
     private javax.swing.JTextField mb_jTxtLevel;
     private javax.swing.JTextField mb_jTxtNickName;
+    private javax.swing.JTextField mb_jTxtRegiao;
     // End of variables declaration//GEN-END:variables
 }

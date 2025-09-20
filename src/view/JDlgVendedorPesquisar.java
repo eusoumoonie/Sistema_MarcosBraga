@@ -9,14 +9,18 @@ package view;
  *
  * @author Moonie
  */
-public class jDlgVendedorPesquisar extends javax.swing.JDialog {
-
+public class JDlgVendedorPesquisar extends javax.swing.JDialog {
+    
+    JDlgVendedor jDlgVendedor;
     /**
      * Creates new form jDlgVendedorPesquisar
      */
-    public jDlgVendedorPesquisar(java.awt.Frame parent, boolean modal) {
+    public JDlgVendedorPesquisar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    public void setTelaPai(JDlgVendedor jDlgvendedor) {
+        this.jDlgVendedor = jDlgVendedor;
     }
 
     /**
@@ -96,20 +100,23 @@ public class jDlgVendedorPesquisar extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedorPesquisar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                jDlgVendedorPesquisar dialog = new jDlgVendedorPesquisar(new javax.swing.JFrame(), true);
+                JDlgVendedorPesquisar dialog = new JDlgVendedorPesquisar(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -126,4 +133,6 @@ public class jDlgVendedorPesquisar extends javax.swing.JDialog {
     private javax.swing.JTable jTable1;
     private javax.swing.JButton mb_jBtnOk;
     // End of variables declaration//GEN-END:variables
+
+    
 }

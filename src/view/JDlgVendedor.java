@@ -5,18 +5,25 @@
  */
 package view;
 
+import util.Util;
+
 /**
  *
  * @author Moonie
  */
-public class jDlgVendedor extends javax.swing.JDialog {
+public class JDlgVendedor extends javax.swing.JDialog {
 
     /**
      * Creates new form jDlgVendedor
      */
-    public jDlgVendedor(java.awt.Frame parent, boolean modal) {
+    public JDlgVendedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Cadastro de Usuários");
+        setLocationRelativeTo(null);
+        Util.habilitar(false, mb_jTxtNome, mb_jTxtCodigo, mb_jTxtApelido,mb_jFmtCpf, mb_jFmtTelefone,
+                        mb_jFmtDataNasc, mb_jPsdSenha, mb_jFmtEmail, mb_jChbAtivo,
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
     }
 
     /**
@@ -98,10 +105,20 @@ public class jDlgVendedor extends javax.swing.JDialog {
         mb_jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png"))); // NOI18N
         mb_jBtnAlterar.setText("Alterar");
         mb_jBtnAlterar.setIconTextGap(16);
+        mb_jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mb_jBtnAlterarActionPerformed(evt);
+            }
+        });
 
         mb_jBtnPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         mb_jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisar-alt.png"))); // NOI18N
         mb_jBtnPesquisar.setText("Pesquisar");
+        mb_jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mb_jBtnPesquisarActionPerformed(evt);
+            }
+        });
 
         mb_jBtnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         mb_jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/afirmativo.png"))); // NOI18N
@@ -291,14 +308,26 @@ public class jDlgVendedor extends javax.swing.JDialog {
 
     private void mb_jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(true, mb_jTxtNome, mb_jTxtCodigo, mb_jTxtApelido,mb_jFmtCpf, mb_jFmtTelefone,
+                        mb_jFmtDataNasc, mb_jPsdSenha, mb_jFmtEmail, mb_jChbAtivo,
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnIncluirActionPerformed
 
     private void mb_jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnExcluirActionPerformed
         // TODO add your handling code here:
+        Util.limpar( mb_jTxtNome, mb_jTxtCodigo, mb_jTxtApelido,mb_jFmtCpf, mb_jFmtTelefone,
+                        mb_jFmtDataNasc, mb_jPsdSenha, mb_jFmtEmail, mb_jChbAtivo,
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        //Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnExcluirActionPerformed
 
     private void mb_jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnCancelarActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(false, mb_jTxtNome, mb_jTxtCodigo, mb_jTxtApelido,mb_jFmtCpf, mb_jFmtTelefone,
+                        mb_jFmtDataNasc, mb_jPsdSenha, mb_jFmtEmail, mb_jChbAtivo,
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(true, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
     }//GEN-LAST:event_mb_jBtnCancelarActionPerformed
 
     private void mb_jFmtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jFmtCpfActionPerformed
@@ -312,6 +341,21 @@ public class jDlgVendedor extends javax.swing.JDialog {
     private void mb_jFmtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jFmtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mb_jFmtEmailActionPerformed
+
+    private void mb_jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+        Util.habilitar(true, mb_jTxtNome, mb_jTxtCodigo, mb_jTxtApelido,mb_jFmtCpf, mb_jFmtTelefone,
+                        mb_jFmtDataNasc, mb_jPsdSenha, mb_jFmtEmail, mb_jChbAtivo,
+                        mb_jBtnConfirmar, mb_jBtnCancelar    );
+        Util.habilitar(false, mb_jBtnIncluir, mb_jBtnAlterar, mb_jBtnExcluir, mb_jBtnPesquisar);
+    }//GEN-LAST:event_mb_jBtnAlterarActionPerformed
+
+    private void mb_jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_jBtnPesquisarActionPerformed
+        // TODO add your handling code here:
+        JDlgVendedorPesquisar jDlgVendedorPesquisar = new JDlgVendedorPesquisar(null, true);
+        jDlgVendedorPesquisar.setTelaPai(this);
+        jDlgVendedorPesquisar.setVisible(true);
+    }//GEN-LAST:event_mb_jBtnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,20 +374,23 @@ public class jDlgVendedor extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                jDlgVendedor dialog = new jDlgVendedor(new javax.swing.JFrame(), true);
+                JDlgVendedor dialog = new JDlgVendedor(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
